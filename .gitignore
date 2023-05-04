@@ -1,4 +1,5 @@
-Lib
+Lib/site-packages
+demos
 .vscode
 Include
 Scripts
