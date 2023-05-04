@@ -15,8 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from django.conf import settings
 
 urlpatterns = [
-    path("flowers/", include("ecommerce.urls")),
+    path(f'{settings.URL_ECOMMERCE_PREFIX}/', include("ecommerce.urls")),
     path('admin/', admin.site.urls),
 ]

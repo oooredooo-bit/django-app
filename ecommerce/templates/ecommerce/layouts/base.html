@@ -42,13 +42,15 @@
     <link href="{% static 'ecommerce/css/responsive.css' %}" rel="stylesheet" />
   </head>
   <body>
-    {% include 'ecommerce/nav.html' %}
+    {% include 'ecommerce/layouts/nav.html' %}
     <header>{% block header %}{% endblock %}</header>
 
     <main>{% block content %}{% endblock %}</main>
 
     <footer class="container-fluid footer_section">
-      {% block footer %}{% endblock %}
+      {% block footer %}
+      <p>&copy; <span id="displayYear"></span> All Rights Reserved</p>
+      {% endblock %}
     </footer>
 
     <script
