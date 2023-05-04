@@ -1,16 +1,16 @@
 Django Commands:
 
 py --version
-py -m venv <env>
-./<env>/Scripts/activate
+py -m venv <your_env>
+./<your_env>/Scripts/activate
 deactivate
 py -m pip install --upgrade pip
 py -m pip install django mysqlclient
 py -m django --version
 
-django-admin startproject <project> .
+django-admin startproject <your_django_admin_project> .
 py manage.py makemigrations
 py manage.py migrate
 py  manage.py createsuperuser
 py manage.py runserver host:port
-py  manage.py startapp <app>
+py  manage.py startapp <your_django_app>
