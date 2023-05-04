@@ -1,0 +1,129 @@
+<section class="info_section layout_padding">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="info_logo">
+          <h5>Fior</h5>
+          <p>
+            There are many variations of passages of Lorem Ipsum available, but
+            the majority have suffered alteration
+          </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_links pl-lg-5">
+          <h5>Useful Link</h5>
+          <ul>
+            <li
+              class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}"
+            >
+              <a href="{% url 'index' %}"> Home </a>
+            </li>
+            <li
+              class="{% if request.resolver_match.url_name == 'about' %}active{% endif %}"
+            >
+              <a href="{% url 'about' %}"> About </a>
+            </li>
+            <li
+              class="{% if request.resolver_match.url_name == 'gallery' %}active{% endif %}"
+            >
+              <a href="{% url 'gallery' %}"> Gallery </a>
+            </li>
+            <li
+              class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}"
+            >
+              <a href="{% url 'contact' %}"> Contact Us </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_insta">
+          <h5>Instagram</h5>
+          <div class="insta_container">
+            <div>
+              <a href="">
+                <div class="insta-box b-1">
+                  <img
+                    src="{% static 'ecommerce/images/insta-1.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-2">
+                  <img
+                    src="{% static 'ecommerce/images/insta-2.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <div class="insta-box b-3">
+                  <img
+                    src="{% static 'ecommerce/images/insta-3.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-4">
+                  <img
+                    src="{% static 'ecommerce/images/insta-4.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+            <div>
+              <a href="">
+                <div class="insta-box b-3">
+                  <img
+                    src="{% static 'ecommerce/images/insta-5.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+              <a href="">
+                <div class="insta-box b-4">
+                  <img
+                    src="{% static 'ecommerce/images/insta-6.png' %}"
+                    alt=""
+                  />
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="info_contact">
+          <h5>Contact</h5>
+          <div>
+            <img
+              src="{% static 'ecommerce/images/location-white.png' %}"
+              alt=""
+            />
+            <p>It is a long fact that a reader</p>
+          </div>
+          <div>
+            <img
+              src="{% static 'ecommerce/images/telephone-white.png' %}"
+              alt=""
+            />
+            <p>+01 1234567890</p>
+          </div>
+          <div>
+            <img
+              src="{% static 'ecommerce/images/envelope-white.png' %}"
+              alt=""
+            />
+            <p>demo@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
