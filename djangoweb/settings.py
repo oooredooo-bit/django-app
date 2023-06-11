@@ -66,7 +66,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.static',
             ],
-            'builtins': ['django.templatetags.static']
+            'builtins': [
+                'django.templatetags.static', 
+                'ecommerce.templatetags.form_extras'
+            ]
         },
     },
 ]

@@ -1,0 +1,28 @@
+{% extends 'ecommerce/layouts/base.html' %} {% block content %}
+<section class="delete_product_section layout_padding">
+  <div class="container">
+    <div class="heading_container justify-content-center">
+      <h2 class="">Delete Product</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">
+              Are you sure you want to delete "{{ product.name }}"?
+            </h5>
+            <form method="post">
+              {% csrf_token %}
+              <div class="text-center">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

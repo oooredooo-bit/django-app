@@ -1,0 +1,32 @@
+{% extends 'ecommerce/layouts/base.html' %} {% block content %}
+
+<section class="create_product_section layout_padding">
+  <div class="container">
+    <div class="heading_container justify-content-center">
+      <h2 class="">Create Product</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto">
+        <form method="post" class="form">
+          {% csrf_token %}
+          <div class="form-group">
+            {{ form.name.label_tag }} {{ form.name|add_class:"form-control" }}
+          </div>
+          <div class="form-group">
+            {{ form.description.label_tag }}
+            <textarea name="{{ form.description.name }}" class="form-control">
+{{ form.description.value }}</textarea
+            >
+          </div>
+          <div class="form-group">
+            {{ form.price.label_tag }} {{ form.price|add_class:"form-control" }}
+          </div>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends 'ecommerce/layouts/base.html' %} {% block content %}
+<section class="list_product_section layout_padding">
+  <div class="container">
+    <div class="heading_container justify-content-center">
+      <h2 class="">Product List</h2>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 mx-auto">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for product in products %}
+            <tr>
+              <td>{{ product.name }}</td>
+              <td>{{ product.description }}</td>
+              <td>{{ product.price }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="3">No products available.</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
