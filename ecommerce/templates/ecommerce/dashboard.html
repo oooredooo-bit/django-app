@@ -1,8 +1,21 @@
-<h2>Welcome to the Dashboard</h2>
-<p>Data:</p>
-<ul>
-  {% for item in data %}
-  <li>{{ item }}</li>
-  {% endfor %}
-</ul>
-<a href="{% url 'logout' %}">Logout</a>
+{% extends 'ecommerce/layouts/base.html' %} {% block content %}
+<div class="hero_area">
+  <!-- slider section -->
+  <section class="slider_section position-relative">
+    <div class="slider_number-container">
+      <div class="number-box">
+        <span> 01 </span>
+        <hr />
+        <span> 02 </span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2>Welcome to Fior User Lounge</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+{% endblock %}
