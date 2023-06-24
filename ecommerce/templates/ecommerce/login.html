@@ -33,6 +33,7 @@
                     class="form-control"
                     id="username"
                     name="username"
+                    autocomplete="off"
                   />
                 </div>
                 <div class="mb-3">
@@ -62,17 +63,25 @@
       rules: {
         username: {
           required: true,
+          minlength: 7, // Minimum length of 3 characters
+          maxlength: 50, // Maximum length of 50 characters
         },
         password: {
           required: true,
+          minlength: 7, // Minimum length of 6 characters
+          maxlength: 20, // Maximum length of 20 characters
         },
       },
       messages: {
         username: {
           required: "Please enter your username.",
+          minlength: "Username must be at least 3 characters long.",
+          maxlength: "Username cannot exceed 50 characters.",
         },
         password: {
           required: "Please enter your password.",
+          minlength: "Password must be at least 6 characters long.",
+          maxlength: "Password cannot exceed 20 characters.",
         },
       },
       errorElement: "span",
