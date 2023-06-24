@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.http import Http404, HttpRequest
 from django.apps import apps
-from .models import Contact, Product
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .models import Contact, Product, User
 from .forms import ContactForm, ProductForm
 
 # Getting application config
@@ -23,15 +26,41 @@ def contact(request: HttpRequest):
 
 # For reference only. You can follow this
 # when exercising forms in Django:
-# def contact(request: HttpRequest):
-#     if request.method == 'POST':
-#         form = ContactForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return render(request, f'{app_name}/thank_you.html')
-#     else:
-#         form = ContactForm()
-#     return render(request, f'{app_name}/contact.html', {'form': form})
+def contact(request: HttpRequest):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return render(request, f'{app_name}/thank_you.html')
+    else:
+        form = ContactForm()
+    return render(request, f'{app_name}/contact.html', {'form': form})
+
+# ========================================================================
+
+# Authentication
+def login_view(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('dashboard')
+        else:
+            messages.error(request, 'Invalid username or password.')
+    return render(request, 'ecommerce/login.html')
+
+@login_required(login_url='login')
+def dashboard_view(request):
+    # Query data from the database using mysqlclient
+    data = User.objects.all()
+    return render(request, 'ecommerce/dashboard.html', {'data': data})
+
+@login_required(login_url='login')
+def logout_view(request):
+    logout(request)
+    return redirect('login')
 
 # ========================================================================
 
